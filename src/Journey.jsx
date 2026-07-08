@@ -1,3 +1,5 @@
+import socialInnovationLogo from './assets/social-innovation-logo.webp'
+
 const timeline = [
   {
     stage: 'She was 13',
@@ -53,9 +55,16 @@ function Journey() {
   return (
     <div className="page">
       <header className="site-header">
-        <div className="wrap">
-          <span className="brand">SafeSpace NeuroPathway</span>
-          <span className="brand-sub">A prevention-first space for young minds</span>
+        <div className="wrap header-row">
+          <img
+            src={socialInnovationLogo}
+            alt="Social Innovation CIC"
+            className="brand-mark"
+          />
+          <div>
+            <span className="brand">SafeSpace NeuroPathway</span>
+            <span className="brand-sub">A prevention-first space for young minds</span>
+          </div>
         </div>
       </header>
 
@@ -174,9 +183,16 @@ function Journey() {
       </section>
 
       <footer className="site-footer">
-        <div className="wrap">
-          <p>Shared with care, for every family still waiting to be heard.</p>
-          <p className="fine-print">SafeSpace NeuroPathway</p>
+        <div className="wrap footer-row">
+          <img
+            src={socialInnovationLogo}
+            alt="Social Innovation CIC — what you think you become, what you feel you attract"
+            className="footer-mark"
+          />
+          <div>
+            <p>Shared with care, for every family still waiting to be heard.</p>
+            <p className="fine-print">SafeSpace NeuroPathway · A Social Innovation CIC project</p>
+          </div>
         </div>
       </footer>
     </div>
