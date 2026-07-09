@@ -36,7 +36,9 @@
 .brand-mark {
   width: 40px;
   height: 40px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--border);
   flex-shrink: 0;
 }
 
@@ -121,6 +123,34 @@ section:not(.hero):not(.support-note) {
   flex-direction: column;
   gap: 40px;
   margin-top: 32px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.timeline ol::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -28px;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--accent);
 }
 
 .timeline-item .stage {
@@ -157,9 +187,11 @@ section:not(.hero):not(.support-note) {
 }
 
 .footer-mark {
-  width: 88px;
-  height: 88px;
-  object-fit: contain;
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--border);
   flex-shrink: 0;
 }
 
@@ -195,5 +227,18 @@ section:not(.hero):not(.support-note) {
 
   section {
     padding: 40px 0;
+  }
+
+  .timeline ol {
+    padding-left: 20px;
+    gap: 32px;
+  }
+
+  .timeline ol::before {
+    left: 2px;
+  }
+
+  .timeline-item::before {
+    left: -20px;
   }
 }
