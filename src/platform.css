@@ -1,0 +1,384 @@
+/* NeuroPathway platform styles — scoped under .platform / .platform-auth so the
+   existing Journey page (.page, App.css) is completely untouched. */
+
+:root {
+  --np-bg: #f5f9fa;
+  --np-surface: #ffffff;
+  --np-border: #dbe6e8;
+  --np-text: #1f2d2f;
+  --np-text-muted: #5b6c6e;
+  --np-primary: #0e6e7a;
+  --np-primary-dark: #094e57;
+  --np-accent: #f2a65a;
+  --np-danger: #b3261e;
+  --np-danger-bg: #fdecea;
+  --np-radius: 14px;
+  --np-shadow: 0 1px 3px rgba(15, 45, 48, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --np-bg: #10191a;
+    --np-surface: #172426;
+    --np-border: #274043;
+    --np-text: #eaf3f3;
+    --np-text-muted: #9db2b4;
+    --np-primary: #4fb8c4;
+    --np-primary-dark: #2d848f;
+    --np-accent: #f2a65a;
+    --np-danger: #ff6b60;
+    --np-danger-bg: #3a1f1d;
+  }
+}
+
+.platform,
+.platform-auth {
+  min-height: 100svh;
+  background: var(--np-bg);
+  color: var(--np-text);
+  font: 16px/1.5 'Segoe UI', system-ui, Roboto, sans-serif;
+}
+
+.platform *,
+.platform-auth * {
+  box-sizing: border-box;
+}
+
+.platform-header {
+  background: var(--np-surface);
+  border-bottom: 1px solid var(--np-border);
+  padding: 14px 20px;
+}
+
+.platform-header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.platform-brand {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--np-primary-dark);
+  text-decoration: none;
+}
+
+.platform-header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.platform-role-badge {
+  font-size: 13px;
+  color: var(--np-text-muted);
+}
+
+.platform-btn-ghost {
+  background: none;
+  border: 1px solid var(--np-border);
+  border-radius: 999px;
+  padding: 8px 16px;
+  color: var(--np-text);
+  cursor: pointer;
+  min-height: 40px;
+}
+
+.platform-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+}
+
+.platform-page h1 {
+  font-size: 26px;
+  margin: 0 0 8px;
+  color: var(--np-primary-dark);
+}
+
+.platform-page-intro {
+  color: var(--np-text-muted);
+  max-width: 60ch;
+  margin-bottom: 24px;
+}
+
+.platform-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.platform-card {
+  display: block;
+  background: var(--np-surface);
+  border: 1px solid var(--np-border);
+  border-radius: var(--np-radius);
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--np-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.platform-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 45, 48, 0.12);
+}
+
+.platform-card h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: var(--np-primary-dark);
+}
+
+.platform-card-meta {
+  font-size: 13px;
+  color: var(--np-text-muted);
+  margin: 0;
+}
+
+.platform-empty {
+  background: var(--np-surface);
+  border: 1px dashed var(--np-border);
+  border-radius: var(--np-radius);
+  padding: 24px;
+  color: var(--np-text-muted);
+}
+
+.platform-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 1px solid var(--np-border);
+  margin-bottom: 20px;
+}
+
+.platform-tabs a {
+  padding: 10px 14px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--np-text-muted);
+  border-bottom: 3px solid transparent;
+  font-size: 14px;
+}
+
+.platform-tabs a.active {
+  color: var(--np-primary-dark);
+  border-bottom-color: var(--np-primary);
+  font-weight: 600;
+}
+
+.platform-form,
+.platform-auth-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--np-surface);
+  border: 1px solid var(--np-border);
+  border-radius: var(--np-radius);
+  padding: 24px;
+  box-shadow: var(--np-shadow);
+  max-width: 640px;
+}
+
+.platform-form label,
+.platform-auth-card label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--np-text-muted);
+  margin-top: 10px;
+}
+
+.platform-form input,
+.platform-form textarea,
+.platform-form select,
+.platform-auth-card input {
+  border: 1px solid var(--np-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font: inherit;
+  min-height: 44px;
+  background: var(--np-bg);
+  color: var(--np-text);
+}
+
+.platform-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.platform-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.platform-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row !important;
+  margin-top: 14px;
+}
+
+.platform-checkbox-label input {
+  min-height: auto;
+  width: 18px;
+  height: 18px;
+}
+
+.platform-form-hint {
+  color: var(--np-text-muted);
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.platform-form-error {
+  background: var(--np-danger-bg);
+  color: var(--np-danger);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.platform button[type='submit'],
+.platform button[type='button'],
+.platform-auth button[type='submit'],
+.platform-auth button[type='button'] {
+  background: var(--np-primary);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  min-height: 44px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 14px;
+  align-self: flex-start;
+}
+
+.platform button:disabled,
+.platform-auth button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.platform button[type='button']:hover,
+.platform button[type='submit']:hover,
+.platform-auth button[type='button']:hover,
+.platform-auth button[type='submit']:hover {
+  background: var(--np-primary-dark);
+}
+
+.platform-observation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.platform-observation-item {
+  background: var(--np-surface);
+  border: 1px solid var(--np-border);
+  border-radius: var(--np-radius);
+  padding: 16px 18px;
+  box-shadow: var(--np-shadow);
+}
+
+.platform-observation-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--np-text-muted);
+  margin-bottom: 8px;
+}
+
+.platform-tag-alert {
+  background: var(--np-danger-bg);
+  color: var(--np-danger);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.platform-candidate-list {
+  margin: 20px 0;
+}
+
+.platform-candidate-card {
+  background: var(--np-surface);
+  border: 1px solid var(--np-border);
+  border-radius: var(--np-radius);
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  box-shadow: var(--np-shadow);
+}
+
+.platform-review-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  border-top: 1px solid var(--np-border);
+  padding-top: 12px;
+}
+
+.platform-review-actions textarea {
+  border: 1px solid var(--np-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: inherit;
+  background: var(--np-bg);
+  color: var(--np-text);
+}
+
+.platform-notice {
+  background: rgba(14, 110, 122, 0.08);
+  border: 1px solid var(--np-primary);
+  border-radius: var(--np-radius);
+  padding: 14px 18px;
+  color: var(--np-text);
+  font-size: 14px;
+}
+
+.platform-loading {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--np-text-muted);
+}
+
+.platform-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.platform-auth-card h1 {
+  margin: 0;
+  color: var(--np-primary-dark);
+}
+
+.platform-auth-subtitle {
+  color: var(--np-text-muted);
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .platform-form-row {
+    grid-template-columns: 1fr;
+  }
+  .platform-header-inner {
+    flex-wrap: wrap;
+  }
+}
